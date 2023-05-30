@@ -1,0 +1,327 @@
+[
+  {
+    "name": "withheld",
+    "mode": "NULLABLE",
+    "type": "RECORD",
+    "description": null,
+    "fields": [
+      {
+        "name": "country_codes",
+        "mode": "REPEATED",
+        "type": "STRING",
+        "description": null,
+        "fields": []
+      }
+    ]
+  },
+  {
+    "name": "username",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "url",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "public_metrics",
+    "mode": "NULLABLE",
+    "type": "RECORD",
+    "description": null,
+    "fields": [
+      {
+        "name": "listed_count",
+        "mode": "NULLABLE",
+        "type": "INTEGER",
+        "description": null,
+        "fields": []
+      },
+      {
+        "name": "tweet_count",
+        "mode": "NULLABLE",
+        "type": "INTEGER",
+        "description": null,
+        "fields": []
+      },
+      {
+        "name": "following_count",
+        "mode": "NULLABLE",
+        "type": "INTEGER",
+        "description": null,
+        "fields": []
+      },
+      {
+        "name": "followers_count",
+        "mode": "NULLABLE",
+        "type": "INTEGER",
+        "description": null,
+        "fields": []
+      }
+    ]
+  },
+  {
+    "name": "description",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "protected",
+    "mode": "NULLABLE",
+    "type": "BOOLEAN",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "profile_image_url",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "pinned_tweet_id",
+    "mode": "NULLABLE",
+    "type": "INTEGER",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "name",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "location",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "id",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "entities",
+    "mode": "NULLABLE",
+    "type": "RECORD",
+    "description": null,
+    "fields": [
+      {
+        "name": "description",
+        "mode": "NULLABLE",
+        "type": "RECORD",
+        "description": null,
+        "fields": [
+          {
+            "name": "cashtags",
+            "mode": "REPEATED",
+            "type": "RECORD",
+            "description": null,
+            "fields": [
+              {
+                "name": "tag",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": null,
+                "fields": []
+              },
+              {
+                "name": "end",
+                "mode": "NULLABLE",
+                "type": "INTEGER",
+                "description": null,
+                "fields": []
+              },
+              {
+                "name": "start",
+                "mode": "NULLABLE",
+                "type": "INTEGER",
+                "description": null,
+                "fields": []
+              }
+            ]
+          },
+          {
+            "name": "mentions",
+            "mode": "REPEATED",
+            "type": "RECORD",
+            "description": null,
+            "fields": [
+              {
+                "name": "username",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": null,
+                "fields": []
+              },
+              {
+                "name": "end",
+                "mode": "NULLABLE",
+                "type": "INTEGER",
+                "description": null,
+                "fields": []
+              },
+              {
+                "name": "start",
+                "mode": "NULLABLE",
+                "type": "INTEGER",
+                "description": null,
+                "fields": []
+              }
+            ]
+          },
+          {
+            "name": "hashtags",
+            "mode": "REPEATED",
+            "type": "RECORD",
+            "description": null,
+            "fields": [
+              {
+                "name": "tag",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": null,
+                "fields": []
+              },
+              {
+                "name": "end",
+                "mode": "NULLABLE",
+                "type": "INTEGER",
+                "description": null,
+                "fields": []
+              },
+              {
+                "name": "start",
+                "mode": "NULLABLE",
+                "type": "INTEGER",
+                "description": null,
+                "fields": []
+              }
+            ]
+          },
+          {
+            "name": "urls",
+            "mode": "REPEATED",
+            "type": "RECORD",
+            "description": null,
+            "fields": [
+              {
+                "name": "display_url",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": null,
+                "fields": []
+              },
+              {
+                "name": "expanded_url",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": null,
+                "fields": []
+              },
+              {
+                "name": "end",
+                "mode": "NULLABLE",
+                "type": "INTEGER",
+                "description": null,
+                "fields": []
+              },
+              {
+                "name": "url",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": null,
+                "fields": []
+              },
+              {
+                "name": "start",
+                "mode": "NULLABLE",
+                "type": "INTEGER",
+                "description": null,
+                "fields": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "url",
+        "mode": "NULLABLE",
+        "type": "RECORD",
+        "description": null,
+        "fields": [
+          {
+            "name": "urls",
+            "mode": "REPEATED",
+            "type": "RECORD",
+            "description": null,
+            "fields": [
+              {
+                "name": "display_url",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": null,
+                "fields": []
+              },
+              {
+                "name": "expanded_url",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": null,
+                "fields": []
+              },
+              {
+                "name": "end",
+                "mode": "NULLABLE",
+                "type": "INTEGER",
+                "description": null,
+                "fields": []
+              },
+              {
+                "name": "url",
+                "mode": "NULLABLE",
+                "type": "STRING",
+                "description": null,
+                "fields": []
+              },
+              {
+                "name": "start",
+                "mode": "NULLABLE",
+                "type": "INTEGER",
+                "description": null,
+                "fields": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "verified",
+    "mode": "NULLABLE",
+    "type": "BOOLEAN",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "created_at",
+    "mode": "NULLABLE",
+    "type": "TIMESTAMP",
+    "description": null,
+    "fields": []
+  }
+]
