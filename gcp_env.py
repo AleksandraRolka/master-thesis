@@ -1,2 +1,2 @@
-PROJECT_ID = "master-thesis-2023-393813" 
+PROJECT_ID = "" 
 LOCATION = "US"
