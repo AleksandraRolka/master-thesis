@@ -1,3 +1,3 @@
 # Master's thesis
 
-Repository contains master's project and thesis.
+Repository contains master's project.

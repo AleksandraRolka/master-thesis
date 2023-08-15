@@ -1,10 +1,3 @@
-# Classification model based console app
-
-A simple console application that can be used to **classify a Twitter user account**, whether it is a **bot** or a **human** user account. For classification it uses prepared and trained deep neural network model.
-
----
-
-[!NOTE]
-Due to changes in access to the Twitter API, the application does not allow for automatic data download. The data must be prepared in advance in user.json and tweets.json files.
+All of the scripts required to preprocess the original Twitbot-22 dataset of users and their tweets data. All of the scripts were performed on **the Google Cloud Platform (GCP) environment** within created Virtual Machines with the use of resources allocated in **Google Storage** and **Big Query** services.
 
 ---
