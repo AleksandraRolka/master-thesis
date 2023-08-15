@@ -1,0 +1,101 @@
+-- SELECT * FROM `master-thesis-2023-384819.twitbot_22_preprocessed.tweets_000` WHERE context_annotations_entity_id IS NOT NULL;
+-- no results
+
+-- SELECT * FROM `master-thesis-2023-384819.twitbot_22_preprocessed.tweets_000` WHERE context_annotations_domain_id IS NOT NULL;
+-- no results
+
+-- SELECT COUNT(*) FROM `master-thesis-2023-384819.twitbot_22_preprocessed.tweets_000` WHERE no_hashtags IS NOT NULL;
+-- 695037
+
+-- SELECT COUNT(*) FROM `master-thesis-2023-384819.twitbot_22_preprocessed.tweets_000` WHERE no_hashtags>0;
+-- 167443
+
+-- SELECT COUNT(*) FROM `master-thesis-2023-384819.twitbot_22_preprocessed.tweets_000` WHERE possibly_sensitive IS TRUE;
+-- 2674
+
+SELECT author_id, COUNT(id) as number_of_tweets FROM `master-thesis-2023-384819.twitbot_22_preprocessed.tweets_000` GROUP BY author_id ORDER BY 2;
+--  number of authors: 45124
+
+-- SELECT author_id, COUNT(id) as number_of_tweets FROM `master-thesis-2023-384819.twitbot_22_preprocessed.tweets_000` GROUP BY author_id HAVING number_of_tweets=1 ORDER BY 2;
+--  10606
+-- SELECT author_id, COUNT(id) as number_of_tweets FROM `master-thesis-2023-384819.twitbot_22_preprocessed.tweets_000` GROUP BY author_id HAVING number_of_tweets<=5 ORDER BY 2;
+--  <: 21443  <=: 22949
+-- SELECT author_id, COUNT(id) as number_of_tweets FROM `master-thesis-2023-384819.twitbot_22_preprocessed.tweets_000` GROUP BY author_id HAVING number_of_tweets>5 ORDER BY 2;
+-- 22175
+-- SELECT author_id, COUNT(id) as number_of_tweets FROM `master-thesis-2023-384819.twitbot_22_preprocessed.tweets_000` GROUP BY author_id HAVING number_of_tweets > 10 ORDER BY 2;
+-- 18389
+
+
+-- --------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- SELECT COUNT(*) FROM `master-thesis-2023-384819.twitbot_22_before_preprocessing.users`;
+-- 169413 results (reduced users list by authors id list)
+
+-- SELECT * FROM `master-thesis-2023-384819.twitbot_22_before_preprocessing.users` WHERE profile_image_url="";
+-- 12 results 
+
+-- SELECT * FROM `master-thesis-2023-384819.twitbot_22_before_preprocessing.users` WHERE location IS NOT NULL;
+-- 99776 results
+
+-- SELECT * FROM `master-thesis-2023-384819.twitbot_22_before_preprocessing.users` WHERE location IS NULL;
+-- 69637 results
+
+-- SELECT * FROM `master-thesis-2023-384819.twitbot_22_before_preprocessing.users` WHERE description="";
+-- 42998 results
+
+
+-- --------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- SELECT * FROM `master-thesis-2023-393813.twitbot_22_preprocessed.users`;
+-- 169413 results
+
+-- SELECT * FROM `master-thesis-2023-393813.twitbot_22_preprocessed.users` WHERE label="human";
+-- 122885 results
+-- SELECT * FROM `master-thesis-2023-393813.twitbot_22_preprocessed.users` WHERE label="bot";
+-- 46528
+
+-- SELECT COUNT(*) FROM `master-thesis-2023-393813.twitbot_22_preprocessed.users` WHERE label="human" AND verified=true;
+-- 7346
+-- SELECT COUNT(*) FROM `master-thesis-2023-393813.twitbot_22_preprocessed.users` WHERE label="bot" AND verified=true;
+-- 0
+
+-- SELECT COUNT(*) FROM `master-thesis-2023-393813.twitbot_22_preprocessed.users` WHERE label="human" AND has_profile_image_url=true;
+-- 122879
+-- SELECT COUNT(*) FROM `master-thesis-2023-393813.twitbot_22_preprocessed.users` WHERE label="bot" AND has_profile_image_url=true;
+-- 46522
+
+-- SELECT COUNT(*) FROM `master-thesis-2023-393813.twitbot_22_preprocessed.users` WHERE label="human" AND has_location=true;
+-- 80208
+-- SELECT COUNT(*) FROM `master-thesis-2023-393813.twitbot_22_preprocessed.users` WHERE label="bot" AND has_location=true;
+-- 19568
+
+-- SELECT COUNT(*) FROM `master-thesis-2023-393813.twitbot_22_preprocessed.users` WHERE label="human" AND url_no_urls>0;
+-- 61085
+-- SELECT COUNT(*) FROM `master-thesis-2023-393813.twitbot_22_preprocessed.users` WHERE label="bot" AND url_no_urls>0;
+-- 11807
+
+-- SELECT COUNT(*) FROM `master-thesis-2023-393813.twitbot_22_preprocessed.users` WHERE label="human" AND is_withheld=true;
+-- 5
+-- SELECT COUNT(*) FROM `master-thesis-2023-393813.twitbot_22_preprocessed.users` WHERE label="bot" AND is_withheld=true;
+-- 1
+
+-- --------------------------------------------------------------------------------------------------------------------------------------------------------------
+SELECT * 
+FROM `master-thesis-2023-393813.twitbot_22_preprocessed.tweets` as tweetstable 
+WHERE EXISTS 
+    (SELECT * 
+     FROM `master-thesis-2023-393813.twitbot_22_preprocessed.users`as userstable 
+     WHERE userstable.id = tweetstable.author_id);
+-- 4733799 results
+
+SELECT * 
+FROM `master-thesis-2023-393813.twitbot_22_preprocessed.users`as userstable 
+WHERE EXISTS 
+    (SELECT * 
+     FROM `master-thesis-2023-393813.twitbot_22_preprocessed.tweets` as tweetstable 
+     WHERE tweetstable.author_id = userstable.id);
+-- 102050 results
+
+-- SELECT * FROM `master-thesis-2023-393813.twitbot_22_preprocessed_subset.users`  WHERE label='bot';
+-- 27
+
+-- SELECT * FROM `master-thesis-2023-393813.twitbot_22_preprocessed_subset.users`  WHERE label='human';
+-- 73

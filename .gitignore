@@ -1,1 +1,4 @@
 data/**/*.json
+data/devided-dataset/
+data/parsed-dataset/
+

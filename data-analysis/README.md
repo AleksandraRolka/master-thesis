@@ -1,0 +1,1 @@
+Here are stored copies of Jupyter Notebooks used on Google Cloud Platform (GCP) and Collab to analyze, process the data and create a neural network model whose purpose is to classify Twitter account whether it is a bot's or human's account.

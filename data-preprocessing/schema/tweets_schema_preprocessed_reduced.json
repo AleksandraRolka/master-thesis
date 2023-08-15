@@ -1,0 +1,277 @@
+[
+  {
+    "name": "id",
+    "mode": "REQUIRED",
+    "type": "STRING",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "author_id",
+    "mode": "REQUIRED",
+    "type": "STRING",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "created_at",
+    "mode": "REQUIRED",
+    "type": "INTEGER",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "org_text",
+    "mode": "REQUIRED",
+    "type": "STRING",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "text",
+    "mode": "REQUIRED",
+    "type": "STRING",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "source",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "withheld",
+    "mode": "REQUIRED",
+    "type": "BOOLEAN",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "copyright_infringement",
+    "mode": "REQUIRED",
+    "type": "BOOLEAN",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "is_reply",
+    "mode": "REQUIRED",
+    "type": "BOOLEAN",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "geo_tagged",
+    "mode": "REQUIRED",
+    "type": "BOOLEAN",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "latitude",
+    "mode": "NULLABLE",
+    "type": "FLOAT",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "longitude",
+    "mode": "NULLABLE",
+    "type": "FLOAT",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "conversation_id",
+    "mode": "NULLABLE",
+    "type": "INTEGER",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "reply_settings",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "retweet_count",
+    "mode": "REQUIRED",
+    "type": "INTEGER",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "reply_count",
+    "mode": "REQUIRED",
+    "type": "STRING",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "like_count",
+    "mode": "REQUIRED",
+    "type": "INTEGER",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "quote_count",
+    "mode": "REQUIRED",
+    "type": "INTEGER",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "any_polls_attached",
+    "mode": "REQUIRED",
+    "type": "BOOLEAN",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "any_media_attached",
+    "mode": "REQUIRED",
+    "type": "BOOLEAN",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "possibly_sensitive",
+    "mode": "REQUIRED",
+    "type": "BOOLEAN",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "has_referenced_tweets",
+    "mode": "REQUIRED",
+    "type": "BOOLEAN",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "media_attached",
+    "mode": "REQUIRED",
+    "type": "BOOLEAN",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "no_cashtags",
+    "mode": "REQUIRED",
+    "type": "INTEGER",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "no_mentions",
+    "mode": "REQUIRED",
+    "type": "INTEGER",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "no_user_mentions",
+    "mode": "REQUIRED",
+    "type": "INTEGER",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "user_mentions",
+    "mode": "REPEATED",
+    "type": "RECORD",
+    "description": null,
+    "fields": [
+      {
+        "name": "username",
+        "mode": "REQUIRED",
+        "type": "STRING",
+        "description": null,
+        "fields": []
+      },
+      {
+        "name": "id",
+        "mode": "REQUIRED",
+        "type": "INTEGER",
+        "description": null,
+        "fields": []
+      }
+    ]
+  },
+  {
+    "name": "no_urls",
+    "mode": "REQUIRED",
+    "type": "INTEGER",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "contains_images",
+    "mode": "REQUIRED",
+    "type": "BOOLEAN",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "contains_annotations",
+    "mode": "REQUIRED",
+    "type": "BOOLEAN",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "no_hashtags",
+    "mode": "REQUIRED",
+    "type": "INTEGER",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "hashtags",
+    "mode": "REPEATED",
+    "type": "RECORD",
+    "description": null,
+    "fields": [
+      {
+        "name": "tagname",
+        "mode": "REQUIRED",
+        "type": "STRING",
+        "description": null,
+        "fields": []
+      }
+    ]
+  },
+  {
+    "name": "context_annotations_domain_id",
+    "mode": "NULLABLE",
+    "type": "INTEGER",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "context_annotations_domain_name",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "context_annotations_entity_id",
+    "mode": "NULLABLE",
+    "type": "INTEGER",
+    "description": null,
+    "fields": []
+  },
+  {
+    "name": "context_annotations_entity_name",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": null,
+    "fields": []
+  }
+]
