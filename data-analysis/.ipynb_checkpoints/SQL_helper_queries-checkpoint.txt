@@ -121,3 +121,20 @@ WHERE EXISTS
 --     UNION ALL SELECT * 
 --     FROM bot_records 
 --     ORDER BY row_num;
+
+
+-- ----------------------------------------------------------------------------------------------------------------------------------------------
+-- CREATE TABLE `master-thesis-2023-393813.twitbot_22_preprocessed_common_users_ids.users_with_country` AS
+-- SELECT
+--   uwc.*
+-- FROM
+--   `master-thesis-2023-393813.twitbot_22_preprocessed_common_users_ids.users_with_country_tmp` uwc
+-- JOIN
+--   (
+--   SELECT id, ROW_NUMBER() OVER () AS row_num
+--   FROM `master-thesis-2023-393813.twitbot_22_preprocessed_common_users_ids.users`
+-- ) u2
+-- ON
+--   uwc.id = u2.id
+-- ORDER BY
+--   u2.row_num;
