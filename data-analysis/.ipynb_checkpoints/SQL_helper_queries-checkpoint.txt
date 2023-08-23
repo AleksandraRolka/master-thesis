@@ -104,3 +104,20 @@ WHERE EXISTS
 -- ----------------------------------------------------------------------------------------------------------------------------------------------
 -- SELECT COUNT(*) FROM `master-thesis-2023-393813.twitbot_22_preprocessed_common_users_ids.users` WHERE label='bot';
 -- 21614
+
+-- ----------------------------------------------------------------------------------------------------------------------------------------------
+-- WITH 
+--   human_records AS (
+--     SELECT *, ROW_NUMBER() OVER () row_num 
+--     FROM `master-thesis-2023-393813.twitbot_22_preprocessed_common_users_ids.users_with_country`
+--     WHERE label = 'human' 
+--     LIMIT 2500),
+--   bot_records AS (
+--   SELECT *, ROW_NUMBER() OVER () row_num 
+--     FROM `master-thesis-2023-393813.twitbot_22_preprocessed_common_users_ids.users_with_country`
+--     WHERE label = 'bot' 
+--     LIMIT 2500)
+--   SELECT * FROM human_records 
+--     UNION ALL SELECT * 
+--     FROM bot_records 
+--     ORDER BY row_num;
