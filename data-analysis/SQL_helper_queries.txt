@@ -44,77 +44,77 @@ SELECT author_id, COUNT(id) as number_of_tweets FROM `master-thesis-2023-384819.
 
 
 -- ----------------------------------------------------------------------------------------------------------------------------------------------
--- SELECT * FROM `master-thesis-2023-393813.twitbot_22_preprocessed.users`;
+-- SELECT * FROM `project_id.twitbot_22_preprocessed.users`;
 -- 169413 results
 
--- SELECT * FROM `master-thesis-2023-393813.twitbot_22_preprocessed.users` WHERE label="human";
+-- SELECT * FROM `project_id.twitbot_22_preprocessed.users` WHERE label="human";
 -- 122885 results
--- SELECT * FROM `master-thesis-2023-393813.twitbot_22_preprocessed.users` WHERE label="bot";
+-- SELECT * FROM `project_id.twitbot_22_preprocessed.users` WHERE label="bot";
 -- 46528
 
--- SELECT COUNT(*) FROM `master-thesis-2023-393813.twitbot_22_preprocessed.users` WHERE label="human" AND verified=true;
+-- SELECT COUNT(*) FROM `project_id.twitbot_22_preprocessed.users` WHERE label="human" AND verified=true;
 -- 7346
--- SELECT COUNT(*) FROM `master-thesis-2023-393813.twitbot_22_preprocessed.users` WHERE label="bot" AND verified=true;
+-- SELECT COUNT(*) FROM `project_id.twitbot_22_preprocessed.users` WHERE label="bot" AND verified=true;
 -- 0
 
--- SELECT COUNT(*) FROM `master-thesis-2023-393813.twitbot_22_preprocessed.users` WHERE label="human" AND has_profile_image_url=true;
+-- SELECT COUNT(*) FROM `project_id.twitbot_22_preprocessed.users` WHERE label="human" AND has_profile_image_url=true;
 -- 122879
--- SELECT COUNT(*) FROM `master-thesis-2023-393813.twitbot_22_preprocessed.users` WHERE label="bot" AND has_profile_image_url=true;
+-- SELECT COUNT(*) FROM `project_id.twitbot_22_preprocessed.users` WHERE label="bot" AND has_profile_image_url=true;
 -- 46522
 
--- SELECT COUNT(*) FROM `master-thesis-2023-393813.twitbot_22_preprocessed.users` WHERE label="human" AND has_location=true;
+-- SELECT COUNT(*) FROM `project_id.twitbot_22_preprocessed.users` WHERE label="human" AND has_location=true;
 -- 80208
--- SELECT COUNT(*) FROM `master-thesis-2023-393813.twitbot_22_preprocessed.users` WHERE label="bot" AND has_location=true;
+-- SELECT COUNT(*) FROM `project_id.twitbot_22_preprocessed.users` WHERE label="bot" AND has_location=true;
 -- 19568
 
--- SELECT COUNT(*) FROM `master-thesis-2023-393813.twitbot_22_preprocessed.users` WHERE label="human" AND url_no_urls>0;
+-- SELECT COUNT(*) FROM `project_id.twitbot_22_preprocessed.users` WHERE label="human" AND url_no_urls>0;
 -- 61085
--- SELECT COUNT(*) FROM `master-thesis-2023-393813.twitbot_22_preprocessed.users` WHERE label="bot" AND url_no_urls>0;
+-- SELECT COUNT(*) FROM `project_id.twitbot_22_preprocessed.users` WHERE label="bot" AND url_no_urls>0;
 -- 11807
 
--- SELECT COUNT(*) FROM `master-thesis-2023-393813.twitbot_22_preprocessed.users` WHERE label="human" AND is_withheld=true;
+-- SELECT COUNT(*) FROM `project_id.twitbot_22_preprocessed.users` WHERE label="human" AND is_withheld=true;
 -- 5
--- SELECT COUNT(*) FROM `master-thesis-2023-393813.twitbot_22_preprocessed.users` WHERE label="bot" AND is_withheld=true;
+-- SELECT COUNT(*) FROM `project_id.twitbot_22_preprocessed.users` WHERE label="bot" AND is_withheld=true;
 -- 1
 
 -- ----------------------------------------------------------------------------------------------------------------------------------------------
 SELECT * 
-FROM `master-thesis-2023-393813.twitbot_22_preprocessed.tweets` as tweetstable 
+FROM `project_id.twitbot_22_preprocessed.tweets` as tweetstable 
 WHERE EXISTS 
     (SELECT * 
-     FROM `master-thesis-2023-393813.twitbot_22_preprocessed.users`as userstable 
+     FROM `project_id.twitbot_22_preprocessed.users`as userstable 
      WHERE userstable.id = tweetstable.author_id);
 -- 4733799 results
 
 SELECT * 
-FROM `master-thesis-2023-393813.twitbot_22_preprocessed.users`as userstable 
+FROM `project_id.twitbot_22_preprocessed.users`as userstable 
 WHERE EXISTS 
     (SELECT * 
-     FROM `master-thesis-2023-393813.twitbot_22_preprocessed.tweets` as tweetstable 
+     FROM `project_id.twitbot_22_preprocessed.tweets` as tweetstable 
      WHERE tweetstable.author_id = userstable.id);
 -- 102050 results
 
--- SELECT * FROM `master-thesis-2023-393813.twitbot_22_preprocessed_subset.users`  WHERE label='bot';
+-- SELECT * FROM `project_id.twitbot_22_preprocessed_subset.users`  WHERE label='bot';
 -- 27
 
--- SELECT * FROM `master-thesis-2023-393813.twitbot_22_preprocessed_subset.users`  WHERE label='human';
+-- SELECT * FROM `project_id.twitbot_22_preprocessed_subset.users`  WHERE label='human';
 -- 73
 
 
 -- ----------------------------------------------------------------------------------------------------------------------------------------------
--- SELECT COUNT(*) FROM `master-thesis-2023-393813.twitbot_22_preprocessed_common_users_ids.users` WHERE label='bot';
+-- SELECT COUNT(*) FROM `project_id.twitbot_22_preprocessed_common_users_ids.users` WHERE label='bot';
 -- 21614
 
 -- ----------------------------------------------------------------------------------------------------------------------------------------------
 -- WITH 
 --   human_records AS (
 --     SELECT *, ROW_NUMBER() OVER () row_num 
---     FROM `master-thesis-2023-393813.twitbot_22_preprocessed_common_users_ids.users_with_country`
+--     FROM `project_id.twitbot_22_preprocessed_common_users_ids.users_with_country`
 --     WHERE label = 'human' 
 --     LIMIT 2500),
 --   bot_records AS (
 --   SELECT *, ROW_NUMBER() OVER () row_num 
---     FROM `master-thesis-2023-393813.twitbot_22_preprocessed_common_users_ids.users_with_country`
+--     FROM `project_id.twitbot_22_preprocessed_common_users_ids.users_with_country`
 --     WHERE label = 'bot' 
 --     LIMIT 2500)
 --   SELECT * FROM human_records 
@@ -124,17 +124,34 @@ WHERE EXISTS
 
 
 -- ----------------------------------------------------------------------------------------------------------------------------------------------
--- CREATE TABLE `master-thesis-2023-393813.twitbot_22_preprocessed_common_users_ids.users_with_country` AS
+-- CREATE TABLE `project_id.twitbot_22_preprocessed_common_users_ids.users_with_country` AS
 -- SELECT
 --   uwc.*
 -- FROM
---   `master-thesis-2023-393813.twitbot_22_preprocessed_common_users_ids.users_with_country_tmp` uwc
+--   `project_id.twitbot_22_preprocessed_common_users_ids.users_with_country_tmp` uwc
 -- JOIN
 --   (
 --   SELECT id, ROW_NUMBER() OVER () AS row_num
---   FROM `master-thesis-2023-393813.twitbot_22_preprocessed_common_users_ids.users`
+--   FROM `project_id.twitbot_22_preprocessed_common_users_ids.users`
 -- ) u2
 -- ON
 --   uwc.id = u2.id
 -- ORDER BY
 --   u2.row_num;
+
+
+-- ----------------------------------------------------------------------------------------------------------------------------------------------
+CREATE TABLE `project_id.twitbot_22_preprocessed_common_users_ids.users_with_country` AS
+SELECT
+  uwc.*
+FROM
+  `project_id.twitbot_22_preprocessed_common_users_ids.users_with_country_temp` uwc
+JOIN
+  (
+  SELECT id, ROW_NUMBER() OVER () AS row_num
+  FROM project_id.twitbot_22_preprocessed_common_users_ids.users`
+) u2
+ON
+  uwc.id = u2.id
+ORDER BY
+  u2.row_num;
