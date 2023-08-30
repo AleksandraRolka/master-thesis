@@ -1,1 +1,3 @@
 data/**/*.json
+gcp_env.py
+.ipynb_checkpoints/gcp_env-checkpoint.py
