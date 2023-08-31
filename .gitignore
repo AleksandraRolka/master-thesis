@@ -1,3 +1,6 @@
 data/**/*.json
 gcp_env.py
 .ipynb_checkpoints/gcp_env-checkpoint.py
+data-analysis/users_and_tweets_data_based/glove.**.txt
+glove.**.zip
+gcp_env.cpython-37.pyc
