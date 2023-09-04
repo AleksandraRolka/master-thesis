@@ -4,3 +4,5 @@ gcp_env.py
 data-analysis/users_and_tweets_data_based/glove.**.txt
 glove.**.zip
 gcp_env.cpython-37.pyc
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
